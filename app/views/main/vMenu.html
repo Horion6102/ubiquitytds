@@ -1,0 +1,17 @@
+<div class="head">
+	<div class="ui container">
+		<div class="ui pointing inverted menu">
+			<div class="header item">
+				<a href="#">Home</a>
+			</div>
+			<div class="header item">
+				<a href="#">Nouvelle liste</a>
+			</div>
+		  {% for theme in themes %}
+		  <a class="item {{ activeTheme==theme ? 'active' }}" href="IndexController/ct/{{theme}}">
+		    {{theme}}
+		  </a>
+		  {% endfor %}
+		</div>
+	</div>
+</div>
