@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67fbf6692fbe03f2e23f152b73a26501",
+    "content-hash": "130fdc816873bb8ac700c6402eb1331b",
     "packages": [
         {
             "name": "frameworks/jquery",
@@ -104,16 +104,16 @@
         },
         {
             "name": "phpmv/ubiquity",
-            "version": "2.4.9",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity.git",
-                "reference": "6e4e41bbbcbb727fc2afc9866f7aa63f1e2cbc6e"
+                "reference": "fc548751607786efd4a75a08edd1a532660717fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/6e4e41bbbcbb727fc2afc9866f7aa63f1e2cbc6e",
-                "reference": "6e4e41bbbcbb727fc2afc9866f7aa63f1e2cbc6e",
+                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/fc548751607786efd4a75a08edd1a532660717fc",
+                "reference": "fc548751607786efd4a75a08edd1a532660717fc",
                 "shasum": ""
             },
             "require": {
@@ -125,6 +125,7 @@
                 "phpmv/ubiquity-dev": "^0.1",
                 "phpmv/ubiquity-devtools": "dev-master"
             },
+            "default-branch": true,
             "type": "framework",
             "extra": {
                 "branch-alias": {
@@ -156,9 +157,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpMv/ubiquity/issues",
-                "source": "https://github.com/phpMv/ubiquity/tree/2.4.9"
+                "source": "https://github.com/phpMv/ubiquity/tree/master"
             },
-            "time": "2022-01-03T01:13:27+00:00"
+            "time": "2022-02-06T23:22:43+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -863,6 +864,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "phpmv/ubiquity": 20,
         "phpmv/ubiquity-attributes": 20
     },
     "prefer-stable": false,

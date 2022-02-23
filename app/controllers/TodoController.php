@@ -3,13 +3,16 @@ namespace controllers;
 use Ubiquity\attributes\items\router\Route;
 use Ubiquity\attributes\items\router\Get;
 use Ubiquity\attributes\items\router\Post;
- use Ubiquity\utils\http\USession;
+use Ubiquity\controllers\auth\AuthController;
+use Ubiquity\controllers\auth\WithAuthTrait;
+use Ubiquity\utils\http\URequest;
+use Ubiquity\utils\http\USession;
 
  /**
   * Controller TodoController
   */
 class TodoController extends \controllers\ControllerBase{
-
+    use WithAuthTrait;
 
     const CACHE_KEY = 'datas/lists/';
     const EMPTY_LIST_ID='not saved';
@@ -29,22 +32,25 @@ class TodoController extends \controllers\ControllerBase{
     }
 
     private function displayList(array $list) {
-        $this->loadview('Todocontroller/displayList.html');
+        $this->loadview('Todocontroller/displayList.html',compact("list"));
     }
 
     #[Post(path: "Todo/addElement",name: "todo.add")]
 	public function addElement(){
-		$list=USession::get(self::LIST_SESSION_KEY,[]);
+		$list=USession::get(self::ACTIVE_LIST_SESSION_KEY,[]);
         $newElement=URequest::post('elm');
         $list []=$newElement;
-        USession::set(self::LIST_SESSION_KEY,$list);
+        USession::set(self::ACTIVE_LIST_SESSION_KEY,$list);
         $this->displayList($list);
 	}
 
 
 	#[Get(path: "Todo/deleteElement/{index}",name: "todo.delete")]
 	public function deleteElement($index){
-		var_dump($index);
+        $list=USession::get(self::ACTIVE_LIST_SESSION_KEY,[]);
+        unset($list[$index]);
+        USession::set(self::ACTIVE_LIST_SESSION_KEY,$list=\array_values($list));
+        $this->displayList($list);
 	}
 
 
@@ -82,5 +88,10 @@ class TodoController extends \controllers\ControllerBase{
 	public function saveList(){
 		
 	}*/
+
+    protected function getAuthController(): AuthController
+    {
+        return new Login($this);
+    }
 
 }

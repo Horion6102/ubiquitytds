@@ -1,11 +1,11 @@
 <div class="ui inverted segment">
-    <div class="ui label">{{title}}</div>
+    <div class="ui label inverted">{{title}}</div>
     <form action="{{path('todo.add')}}" method="post">
         <input type="text" name="elm">
     </form>
     <div class="ui segment">
     {% for elm in list %}
         <div>{{elm}} <a href="{{path('todo.delete',[loop.index0])}}">Delete</a></div>
-        {% endfor %}}
+    {% endfor %}
     </div>
 </div>
