@@ -1,0 +1,25 @@
+{% for elm in temp %}
+    <p>{{elm.name}}</p><a href="{{path('todos.load',[elm.name])}}">load</a>
+{% endfor %}
+
+<a href="{{path('todos.new')}}">New list</a>
+<br>
+<a href="{{path('todos.save')}}">Sauvegardé la liste</a>
+
+<form method="post" action="{{path('todos.add')}}">
+    <label for="titre">Nouvelle element</label>
+    <input name="titre" type="text">
+    <button type="submit">Ajouter</button>
+</form>
+
+<ul>
+    {% for elm in list %}
+        <li>
+            {{elm}}
+            <form method="post" action="{{path('todos.edit',[loop.index0])}}">
+                <input name="titre-edit" type="text">
+            </form>
+            <a href="{{path('todos.remove',[loop.index0])}}">remove</a>
+        </li>
+    {% endfor %}
+</ul>
