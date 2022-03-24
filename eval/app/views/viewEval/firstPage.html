@@ -1,0 +1,8 @@
+<a href="">Voir tout les produits</a>
+{% for elm in section %}
+<div>
+    <h3>{{ elm.Name }}</h3> <p>{{ elm.Description }}</p>
+    <a href="{{path('Store.section',[loop.index0])}}">Voir plus</a>
+</div>
+<hr>
+{% endfor %}

@@ -1,0 +1,8 @@
+{% for elm in products %}
+<div>
+    {{img('store/')}}
+    <h3>{{ elm.Name }}</h3> <p>{{ elm.comments }}</p>
+    <a href="">Ajouter au panier</a>
+</div>
+<hr>
+{% endfor %}
