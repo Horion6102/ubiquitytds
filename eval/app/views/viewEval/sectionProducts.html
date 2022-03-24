@@ -3,7 +3,7 @@
     <div class="ui card">
         {{img('img/store/'~ elm.image ~ '.jpg')}}
         <h3>{{ elm.Name }}</h3> <p>{{ elm.price }} €</p>
-        <a href="">Ajouter au panier</a>
+        <a href="{{path('Store.addToCart',[elm.id,1])}}">Ajouter au panier</a>
     </div>
     <hr>
     {% endfor %}
