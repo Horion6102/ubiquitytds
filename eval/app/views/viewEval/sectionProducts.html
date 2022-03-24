@@ -1,8 +1,10 @@
-{% for elm in products %}
-<div class="ui card">
-    {{img('img/store/'~ elm.image ~ '.jpg')}}
-    <h3>{{ elm.Name }}</h3> <p>{{ elm.comments }}</p>
-    <a href="">Ajouter au panier</a>
+<div class="ui cards">
+    {% for elm in products %}
+    <div class="ui card">
+        {{img('img/store/'~ elm.image ~ '.jpg')}}
+        <h3>{{ elm.Name }}</h3> <p>{{ elm.price }} €</p>
+        <a href="">Ajouter au panier</a>
+    </div>
+    <hr>
+    {% endfor %}
 </div>
-<hr>
-{% endfor %}

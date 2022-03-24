@@ -22,4 +22,12 @@ class StoreController extends \controllers\ControllerBase{
         $products=$section->getProducts();
         $this->loadView('viewEval/sectionProducts.html',compact('section','products'));
     }
+
+    #[Route('Store/all',name: 'Store.all')]
+    public function all() {
+        $products=DAO::getAll(Product::class);
+        $this->loadView('viewEval/sectionProducts.html',compact('products'));
+    }
+
+
 }
