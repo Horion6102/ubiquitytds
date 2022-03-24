@@ -1,6 +1,6 @@
 {% for elm in products %}
-<div>
-    {{img('store/')}}
+<div class="ui card">
+    {{img('img/store/'~ elm.image ~ '.jpg')}}
     <h3>{{ elm.Name }}</h3> <p>{{ elm.comments }}</p>
     <a href="">Ajouter au panier</a>
 </div>

@@ -20,7 +20,6 @@ class StoreController extends \controllers\ControllerBase{
     public function section($id) {
         $section=DAO::getById(Section::class,$id+1);
         $products=$section->getProducts();
-        $image=$products->getImage();
-        $this->loadView('viewEval/sectionProducts.html',compact('section','products','image'));
+        $this->loadView('viewEval/sectionProducts.html',compact('section','products'));
     }
 }
